@@ -22,7 +22,7 @@ const giveLoanRouter = require('./routes/giveLoan');
 const usersRouter = require('./routes/users');
 
 app.use('/getLoan', getLoanRouter);
-app.use('/giveLoan', giveLoanRouter);
+//app.use('/giveLoan', giveLoanRouter);
 app.use('/users', usersRouter);
 
 app.listen(port, () => {
