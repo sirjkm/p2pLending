@@ -1,9 +1,9 @@
 const router = require('express').Router();
-let getLoan = require('../models/getLoan.model');
+let lend = require('../models/lend.model');
 
 router.route('/').get((req, res) => {
-    getLoan.find()
-        .then(requests => res.json(requests))
+    lend.find()
+        .then(offers => res.json(offers))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -13,7 +13,7 @@ router.route('/add').post((req, res) => {
     const duration = Number(req.body.duration);
     const date = Date.parse(req.body.date);
 
-    const newRequest = new getLoan({
+    const newRequest = new lend({
         username,
         amount,
         duration,
@@ -21,24 +21,24 @@ router.route('/add').post((req, res) => {
     });
 
     newRequest.save()
-        .then(() => res.json('Request added!'))
+        .then(() => res.json('Offer added!'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {
-    getLoan.findById(req.params.id)
+    lend.findById(req.params.id)
         .then(request => res.json(request))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').delete((req, res) => {
-    getLoan.findByIdAndDelete(req.params.id)
+    lend.findByIdAndDelete(req.params.id)
         .then(() => res.json('Request deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/update/:id').post((req, res) => {
-    getLoan.findById(req.params.id)
+    lend.findById(req.params.id)
         .then(request => {
             request.username = req.body.username;
             request.amount = Number(req.body.amount);

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const getLoanSchema = new Schema({
+const lendSchema = new Schema({
     username: { type: String, required: true },
     amount: { type: Number, required: true },
     duration: { type: Number, required: true },
@@ -11,6 +11,6 @@ const getLoanSchema = new Schema({
     timestamps: true,
 });
 
-const getLoan = mongoose.model('getLoan', getLoanSchema);
+const lend = mongoose.model('lend', lendSchema);
 
-module.exports = getLoan;
+module.exports = lend;

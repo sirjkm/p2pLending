@@ -17,12 +17,12 @@ connection.once('open', () => {
     console.log("MongoDB database connection successful");
 })
 
-const getLoanRouter = require('./routes/getLoan');
-const giveLoanRouter = require('./routes/giveLoan');
+const borrowRouter = require('./routes/borrow');
+const lendRouter = require('./routes/lend');
 const usersRouter = require('./routes/users');
 
-app.use('/getLoan', getLoanRouter);
-app.use('/giveLoan', giveLoanRouter);
+app.use('/borrow', borrowRouter);
+app.use('/lend', lendRouter);
 app.use('/users', usersRouter);
 
 app.listen(port, () => {
