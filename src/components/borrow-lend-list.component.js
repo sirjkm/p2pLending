@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class BorrowLendList extends Component {
+export default class BorrowLendList extends React.Component {
     render() {
         return (
             <div>
