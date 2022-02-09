@@ -1,4 +1,6 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateBorrow extends React.Component {
     constructor(props) {
@@ -21,7 +23,7 @@ export default class CreateBorrow extends React.Component {
 
     componentDidMount() {
         this.setState({
-            users: [''],
+            users: ['test user'],
             username: 'test user'
         })
     }
@@ -68,7 +70,57 @@ export default class CreateBorrow extends React.Component {
     render() {
         return (
             <div>
-                <p>You are on the Create Borrow Page!</p>
+                <h3>Request a Loan</h3>
+                <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                        <label>Username: </label>
+                        <select ref="userInput"
+                            required
+                            className="form-control"
+                            value={this.state.username}
+                            onChange={this.onChangeUsername}>
+                            {
+                                this.state.users.map(function (user) {
+                                    return <option
+                                        key={user}
+                                        value={user}>{user}
+                                    </option>;
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Amount: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.amount}
+                            onChange={this.onChangeAmount}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Duration: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.duration}
+                            onChange={this.onChangeDuration}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Date: </label>
+                        <div>
+                            <DatePicker 
+                                selected={this.state.date}
+                                onChange={this.onChangeDate}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="form-group">
+                        <input type="submit" value="Create a New Request" className="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         )
     }
