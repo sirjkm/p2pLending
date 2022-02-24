@@ -74,7 +74,7 @@ export default class CreateBorrow extends React.Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Username: </label>
-                        <select ref="userInput"
+                        <select ref={elem => this.state.username = elem }
                             required
                             className="form-control"
                             value={this.state.username}
