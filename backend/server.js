@@ -28,3 +28,9 @@ app.use('/users', usersRouter);
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
+
+//reactProject - FE - run on 3000 (this calls stuff on backend:5000) - deployed to a CDN
+//NodeJS/express - BE - run on 5000 
+
+
+
