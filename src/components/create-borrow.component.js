@@ -64,7 +64,7 @@ export default class CreateBorrow extends React.Component {
 
         console.log(borrow);
 
-        window.location = '/';
+        //window.location = '/';
     }
     
     render() {
