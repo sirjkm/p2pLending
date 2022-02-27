@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -64,7 +65,10 @@ export default class CreateBorrow extends React.Component {
 
         console.log(borrow);
 
-        window.location = '/';
+        axios.post('http://localhost:5000/borrow/add', borrow)
+            .then(res => console.log(res.data));
+
+        //window.location = '/';
     }
     
     render() {
