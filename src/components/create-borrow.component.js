@@ -64,7 +64,7 @@ export default class CreateBorrow extends React.Component {
 
         console.log(borrow);
 
-        //window.location = '/';
+        window.location = '/';
     }
     
     render() {
@@ -74,7 +74,7 @@ export default class CreateBorrow extends React.Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Username: </label>
-                        <select ref={elem => this.state.username = elem }
+                        <select
                             required
                             className="form-control"
                             value={this.state.username}
