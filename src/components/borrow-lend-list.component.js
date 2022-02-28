@@ -31,7 +31,7 @@ export default class BorrowLendList extends React.Component {
 
     BorrowLendList() {
         return this.state.borrow.map(currentborrow => {
-            return <Borrow borrow={currentborrow} deleteBorrow={this.deleteBorrow}
+            return <Borrow borrow={currentborrow} deleteBorrow={this.deleteBorrow} key={currentborrow._id} />;
         })
     }
 
