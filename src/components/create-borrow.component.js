@@ -23,9 +23,14 @@ export default class CreateBorrow extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({
-            users: ['test user'],
-            username: 'test user'
+        axios.get('http://localhost:5000/users/')
+            .then(response => {
+                if (response.data.length > 0) {
+                    this.setState({
+                        users: response.data.map(user => user.username),
+                        username: response.data[0].username
+                })
+            }
         })
     }
 
@@ -68,7 +73,7 @@ export default class CreateBorrow extends React.Component {
         axios.post('http://localhost:5000/borrow/add', borrow)
             .then(res => console.log(res.data));
 
-        //window.location = '/';
+        window.location = '/';
     }
     
     render() {
