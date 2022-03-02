@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+const Borrow = props => (
+    <tr>
+        <td>{props.borrow.username}</td>
+        <td>{props.borrow.amound}</td>
+        <td>{props.borrow.duration}</td>
+        <td>{props.borrow.date.substring(0, 10)}</td>
+        <td>
+            <Link to={'/edit/'+props.borrow._id}>edit</Link> | <a href='#' onClick={() => { props.deleteBorrow(props.borrow._id) }}>delete</a>
+        </td>
+    </tr>
+)
+
 export default class BorrowLendList extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +41,7 @@ export default class BorrowLendList extends React.Component {
         })
     }
 
-    BorrowLendList() {
+    BorrowList() {
         return this.state.borrow.map(currentborrow => {
             return <Borrow borrow={currentborrow} deleteBorrow={this.deleteBorrow} key={currentborrow._id} />;
         })
@@ -49,7 +61,7 @@ export default class BorrowLendList extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.BorrowLendList() }
+                        { this.BorrowList() }
                     </tbody>
                 </table>
             </div>
