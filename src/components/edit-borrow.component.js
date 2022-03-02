@@ -23,7 +23,7 @@ export default class EditBorrow extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/borrow/' + this.props.match.params.id)
+        axios.get('http://localhost:5000/borrow/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     username: response.data.username,

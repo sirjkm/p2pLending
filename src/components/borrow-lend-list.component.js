@@ -5,7 +5,7 @@ import axios from 'axios';
 const Borrow = props => (
     <tr>
         <td>{props.borrow.username}</td>
-        <td>{props.borrow.amound}</td>
+        <td>{props.borrow.amount}</td>
         <td>{props.borrow.duration}</td>
         <td>{props.borrow.date.substring(0, 10)}</td>
         <td>
