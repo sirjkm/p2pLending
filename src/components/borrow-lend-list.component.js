@@ -9,7 +9,7 @@ const Borrow = props => (
         <td>{props.borrow.duration}</td>
         <td>{props.borrow.date.substring(0, 10)}</td>
         <td>
-            <Link to={'/edit/'+props.borrow._id}>edit</Link> | <a href='#' onClick={() => { props.deleteBorrow(props.borrow._id) }}>delete</a>
+            <Link to={"/edit/"+props.borrow._id}>edit</Link> | <a href='#' onClick={() => { props.deleteBorrow(props.borrow._id) }}>delete</a>
         </td>
     </tr>
 )

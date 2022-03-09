@@ -35,6 +35,8 @@ export default class CreateUser extends React.Component {
         this.setState({
             username: ''
         })
+
+        window.location = '/'
     }
     
     render() {
