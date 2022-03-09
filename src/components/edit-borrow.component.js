@@ -137,12 +137,11 @@ export default class EditBorrow extends React.Component {
                             />
                         </div>
                     </div>
-
                     <div className="form-group">
                         <input type="submit" value="Edit a Loan Request" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
         )
-    }
-}
+    };
+};
