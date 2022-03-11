@@ -82,7 +82,24 @@ export default class CreateBorrow extends React.Component {
                 <h3>Request a Loan</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Borrower: </label>
+                        <select
+                            required
+                            className="form-control"
+                            value={this.state.username}
+                            onChange={this.onChangeUsername}>
+                            {
+                                this.state.users.map(function (user) {
+                                    return <option
+                                        key={user}
+                                        value={user}>{user}
+                                    </option>;
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Lender: </label>
                         <select
                             required
                             className="form-control"
