@@ -5,6 +5,7 @@ import axios from 'axios';
 const Borrow = props => (
     <tr>
         <td>{props.borrow.username}</td>
+        <td>{props.borrow.username}</td>
         <td>{props.borrow.amount}</td>
         <td>{props.borrow.duration}</td>
         <td>{props.borrow.date.substring(0, 10)}</td>
@@ -54,7 +55,8 @@ export default class BorrowLendList extends React.Component {
                 <table className='table'>
                     <thead className='thead-light'>
                         <tr>
-                            <th>Username</th>
+                            <th>Borrower</th>
+                            <th>Lender</th>
                             <th>Amount</th>
                             <th>Duration</th>
                             <th>Date</th>
