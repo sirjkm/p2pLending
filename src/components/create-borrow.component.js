@@ -8,6 +8,7 @@ export default class CreateBorrow extends React.Component {
         super(props);
 
         this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onChangeLender = this.onChangeLender.bind(this);
         this.onChangeAmount = this.onChangeAmount.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
@@ -15,6 +16,7 @@ export default class CreateBorrow extends React.Component {
 
         this.state = {
             username: '',
+            lender: '',
             amount: 0,
             duration: 0,
             date: new Date(),
@@ -28,13 +30,20 @@ export default class CreateBorrow extends React.Component {
                 if (response.data.length > 0) {
                     this.setState({
                         users: response.data.map(user => user.username),
-                        username: response.data[0].username
+                        username: response.data[0].username,
+                        lender: response.data[0].username
                 })
             }
         })
     }
 
     onChangeUsername(e) {
+        this.setState({
+            username: e.target.value
+        });
+    }
+
+    onChangeLender(e) {
         this.setState({
             username: e.target.value
         });
@@ -63,6 +72,7 @@ export default class CreateBorrow extends React.Component {
 
         const borrow = {
             username: this.state.username,
+            lender: this.state.username,
             amount: this.state.amount,
             duration: this.state.duration,
             date: this.state.date
@@ -104,7 +114,7 @@ export default class CreateBorrow extends React.Component {
                             required
                             className="form-control"
                             value={this.state.username}
-                            onChange={this.onChangeUsername}>
+                            onChange={this.onChangeLender}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option
