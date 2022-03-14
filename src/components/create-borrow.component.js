@@ -113,7 +113,7 @@ export default class CreateBorrow extends React.Component {
                         <select
                             required
                             className="form-control"
-                            value={this.state.username}
+                            value={this.state.lender}
                             onChange={this.onChangeLender}>
                             {
                                 this.state.users.map(function (user) {
