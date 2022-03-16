@@ -45,7 +45,7 @@ export default class CreateBorrow extends React.Component {
 
     onChangeLender(e) {
         this.setState({
-            username: e.target.value
+            lender: e.target.value
         });
     }
 
