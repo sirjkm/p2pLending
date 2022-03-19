@@ -72,7 +72,7 @@ export default class CreateBorrow extends React.Component {
 
         const borrow = {
             username: this.state.username,
-            lender: this.state.username,
+            lender: this.state.lender,
             amount: this.state.amount,
             duration: this.state.duration,
             date: this.state.date
