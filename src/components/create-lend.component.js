@@ -31,7 +31,7 @@ export default class CreateLend extends React.Component {
                     this.setState({
                         users: response.data.map(user => user.username),
                         username: response.data[0].username,
-                        lender: response.data[0].username
+                        lender: response.data[0].lender
                 })
             }
         })
