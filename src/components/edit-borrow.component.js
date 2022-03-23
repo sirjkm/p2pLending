@@ -8,6 +8,7 @@ export default class EditBorrow extends React.Component {
         super(props);
 
         this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onChangeLender = this.onChangeLender.bind(this);
         this.onChangeAmount = this.onChangeAmount.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
@@ -27,6 +28,7 @@ export default class EditBorrow extends React.Component {
             .then(response => {
                 this.setState({
                     username: response.data.username,
+                    lender: response.data.lender,
                     amount: response.data.amount,
                     duration: response.data.duration,
                     date: new Date(response.data.date)
@@ -49,6 +51,12 @@ export default class EditBorrow extends React.Component {
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
+        });
+    }
+
+    onChangeLender(e) {
+        this.setState({
+            lender: e.target.value
         });
     }
 
@@ -75,6 +83,7 @@ export default class EditBorrow extends React.Component {
 
         const borrow = {
             username: this.state.username,
+            lender: this.state.lender,
             amount: this.state.amount,
             duration: this.state.duration,
             date: this.state.date
@@ -100,6 +109,23 @@ export default class EditBorrow extends React.Component {
                             className="form-control"
                             value={this.state.username}
                             onChange={this.onChangeUsername}>
+                            {
+                                this.state.users.map(function (user) {
+                                    return <option
+                                        key={user}
+                                        value={user}>{user}
+                                    </option>;
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Lender: </label>
+                        <select
+                            required
+                            className="form-control"
+                            value={this.state.lender}
+                            onChange={this.onChangeLender}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option

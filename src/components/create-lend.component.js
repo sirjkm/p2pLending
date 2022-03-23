@@ -43,7 +43,7 @@ export default class CreateLend extends React.Component {
         });
     }
 
-        onChangeLender(e) {
+    onChangeLender(e) {
         this.setState({
             lender: e.target.value
         });
