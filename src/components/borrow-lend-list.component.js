@@ -15,28 +15,28 @@ const Borrow = props => (
     </tr>
 )
 
-const Lend = props => (
-    <tr>
-        <td>{props.lend.username}</td>
-        <td>{props.lend.lender}</td>
-        <td>{props.lend.amount}</td>
-        <td>{props.lend.duration}</td>
-        <td>{props.lend.date.substring(0, 10)}</td>
-        <td>
-            <Link to={"/edit/"+props.lend._id}>edit</Link> | <a href='#' onClick={() => { props.deleteLend(props.lend._id) }}>delete</a>
-        </td>
-    </tr>
-)
+// const Lend = props => (
+//     <tr>
+//         <td>{props.lend.username}</td>
+//         <td>{props.lend.lender}</td>
+//         <td>{props.lend.amount}</td>
+//         <td>{props.lend.duration}</td>
+//         <td>{props.lend.date.substring(0, 10)}</td>
+//         <td>
+//             <Link to={"/edit/"+props.lend._id}>edit</Link> | <a href='#' onClick={() => { props.deleteLend(props.lend._id) }}>delete</a>
+//         </td>
+//     </tr>
+// )
 
 export default class BorrowLendList extends React.Component {
     constructor(props) {
         super(props);
 
         this.deleteBorrow = this.deleteBorrow.bind(this);
-        this.deleteLend = this.deleteLend.bind(this);
+        //this.deleteLend = this.deleteLend.bind(this);
 
         this.state = { borrow: [] };
-        this.state = { lend: [] };
+        //this.state = { lend: [] };
     }
 
     componentDidMount() {
@@ -79,11 +79,11 @@ export default class BorrowLendList extends React.Component {
         })
     }
 
-    LendList() {
-        return this.state.lend.map(currentlend => {
-            return <Lend lend={currentlend} deleteLend={this.deleteLend} key={currentlend._id} />;
-        })
-    }
+    // LendList() {
+    //     return this.state.lend.map(currentlend => {
+    //         return <Lend lend={currentlend} deleteLend={this.deleteLend} key={currentlend._id} />;
+    //     })
+    // }
 
     render() {
         return (
@@ -101,10 +101,6 @@ export default class BorrowLendList extends React.Component {
                     </thead>
                     <tbody>
                         {this.BorrowList()}
-                    </tbody>
-                    <br/>
-                    <tbody>
-                        {this.LendList()}
                     </tbody>
                 </table>
             </div>
