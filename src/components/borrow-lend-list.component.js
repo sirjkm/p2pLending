@@ -17,8 +17,8 @@ const Borrow = props => (
 
 const Lend = props => (
     <tr>
-        <td>{props.lend.username}</td>
         <td>{props.lend.lender}</td>
+        <td>{props.lend.username}</td>
         <td>{props.lend.amount}</td>
         <td>{props.lend.duration}</td>
         <td>{props.lend.date.substring(0, 10)}</td>
@@ -35,8 +35,7 @@ export default class BorrowLendList extends React.Component {
         this.deleteBorrow = this.deleteBorrow.bind(this);
         this.deleteLend = this.deleteLend.bind(this);
 
-        this.state = { borrow: [] };
-        //this.state = { lend: [] };
+        this.state = { borrow: [], lend: [] };
     }
 
     componentDidMount() {
@@ -88,7 +87,7 @@ export default class BorrowLendList extends React.Component {
     render() {
         return (
             <div>
-                <h3>Current Requests</h3>
+                <h3>Loan Requests</h3>
                 <table className='table'>
                     <thead className='thead-light'>
                         <tr>
@@ -102,8 +101,20 @@ export default class BorrowLendList extends React.Component {
                     <tbody>
                         {this.BorrowList()}
                     </tbody>
+                </table>
+                    <h3>Loan Offers</h3>
+                <table className='table'>
+                    <thead className='thead-light'>
+                        <tr>
+                            <th>Lender</th>
+                            <th>Borrower</th>
+                            <th>Amount</th>
+                            <th>Duration</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        {this.BorrowList()}
+                        {this.LendList()}
                     </tbody>
                 </table>
             </div>
