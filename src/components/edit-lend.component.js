@@ -3,7 +3,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
-export default class EditBorrow extends React.Component {
+export default class EditLend extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,7 +25,7 @@ export default class EditBorrow extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/borrow/'+this.props.match.params.id)
+        axios.get('http://localhost:5000/lend/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     username: response.data.username,
@@ -82,7 +82,7 @@ export default class EditBorrow extends React.Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const borrow = {
+        const lend = {
             username: this.state.username,
             lender: this.state.lender,
             amount: this.state.amount,
@@ -90,9 +90,9 @@ export default class EditBorrow extends React.Component {
             date: this.state.date
         }
 
-        console.log(borrow);
+        console.log(lend);
 
-        axios.post('http://localhost:5000/borrow/update/'+this.props.match.params.id, borrow)
+        axios.post('http://localhost:5000/lend/update/'+this.props.match.params.id, lend)
             .then(res => console.log(res.data));
 
         window.location = '/';
@@ -104,12 +104,12 @@ export default class EditBorrow extends React.Component {
                 <h3>Edit a Loan</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Lender: </label>
                         <select
                             required
                             className="form-control"
-                            value={this.state.username}
-                            onChange={this.onChangeUsername}>
+                            value={this.state.lender}
+                            onChange={this.onChangeLender}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option
@@ -121,12 +121,12 @@ export default class EditBorrow extends React.Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>Lender: </label>
+                        <label>Borrower: </label>
                         <select
                             required
                             className="form-control"
-                            value={this.state.lender}
-                            onChange={this.onChangeLender}>
+                            value={this.state.username}
+                            onChange={this.onChangeUsername}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option

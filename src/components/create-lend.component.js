@@ -92,12 +92,12 @@ export default class CreateLend extends React.Component {
                 <h3>Offer a Loan</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Borrower: </label>
+                        <label>Lender: </label>
                         <select
                             required
                             className="form-control"
-                            value={this.state.username}
-                            onChange={this.onChangeUsername}>
+                            value={this.state.lender}
+                            onChange={this.onChangeLender}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option
@@ -109,12 +109,12 @@ export default class CreateLend extends React.Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>Lender: </label>
+                        <label>Borrower: </label>
                         <select
                             required
                             className="form-control"
-                            value={this.state.lender}
-                            onChange={this.onChangeLender}>
+                            value={this.state.username}
+                            onChange={this.onChangeUsername}>
                             {
                                 this.state.users.map(function (user) {
                                     return <option
