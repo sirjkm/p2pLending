@@ -10,8 +10,12 @@ Registered users will also be able to offer ad hoc loans to the marketplace avai
 
 # Create a Loan Request
 
+A user is able to connect with other existing users to request loans with specific terms offered.
+
 # Create a Loan Offering
 
-# Edit a Request
+A user is able to connect with other existing users to offer loans with specific terms offered.
 
-# Edit an Offer
+# Edit a Request or Offering
+
+Each loan will have an option to edit the terms of the agreement for a set period of time
