@@ -17,8 +17,8 @@ const Borrow = props => (
 
 const Lend = props => (
     <tr>
-        <td>{props.lend.lender}</td>
         <td>{props.lend.username}</td>
+        <td>{props.lend.lender}</td>
         <td>{props.lend.amount}</td>
         <td>{props.lend.duration}</td>
         <td>{props.lend.date.substring(0, 10)}</td>
