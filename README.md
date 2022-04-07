@@ -19,3 +19,7 @@ A user is able to connect with other existing users to offer loans with specific
 # Edit a Request or Offering
 
 Each loan will have an option to edit the terms of the agreement for a set period of time
+
+# Future Development
+
+In the future I would like there to be a "marketplace" for loans. A user could joing and search for an appropriate amount that they are looking to borrow and check terms and conditions set by the person offering the loan.
