@@ -1,4 +1,4 @@
-# Getting Started with my P2P Lending Application
+# Getting Started with this P2P Lending Application
 
 For the moment it's only run on a development server so those have to be run traditionally through uploading the code to your IDE and initializing both the front end (via React) and the backend (via Node/Express) with 'npm start'. The backend is in its own "environment" if you will so if you run it locally you have to start the server in its own terminal and the react app in another terminal for normal operation.
 
