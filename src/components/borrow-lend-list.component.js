@@ -23,7 +23,7 @@ const Lend = props => (
         <td>{props.lend.duration}</td>
         <td>{props.lend.date.substring(0, 10)}</td>
         <td>
-            <Link to={"/lend/edit/"+props.lend._id}>edit</Link> | <a href='#' onClick={() => { props.deleteLend(props.lend._id) }}>delete</a>
+            <Link to={"/lend/edit/"+props.lend._id}>Edit</Link> | <a href='#' onClick={() => { props.deleteLend(props.lend._id) }}>Delete</a>
         </td>
     </tr>
 )
