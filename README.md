@@ -23,3 +23,5 @@ Each loan will have an option to edit the terms of the agreement for a set perio
 # Future Development
 
 In the future I would like there to be a "marketplace" for loans. A user could joing and search for an appropriate amount that they are looking to borrow and check terms and conditions set by the person offering the loan.
+
+I hope you enjoy the app and I look forward to continued development.
