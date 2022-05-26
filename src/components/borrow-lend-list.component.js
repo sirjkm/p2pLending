@@ -91,11 +91,11 @@ export default class BorrowLendList extends React.Component {
                 <table className='table'>
                     <thead className='thead-light'>
                         <tr>
-                            <th>Borrower</th>
-                            <th>Lender</th>
-                            <th>Amount</th>
-                            <th>Duration</th>
-                            <th>Date</th>
+                            <th>borrower</th>
+                            <th>lender</th>
+                            <th>amount</th>
+                            <th>duration</th>
+                            <th>date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,11 +106,11 @@ export default class BorrowLendList extends React.Component {
                 <table className='table'>
                     <thead className='thead-light'>
                         <tr>
-                            <th>Lender</th>
-                            <th>Borrower</th>
-                            <th>Amount</th>
-                            <th>Duration</th>
-                            <th>Date</th>
+                            <th>lender</th>
+                            <th>borrower</th>
+                            <th>amount</th>
+                            <th>duration</th>
+                            <th>date</th>
                         </tr>
                     </thead>
                     <tbody>
