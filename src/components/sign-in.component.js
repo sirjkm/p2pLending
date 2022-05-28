@@ -27,6 +27,12 @@ export default class SignIn extends React.Component {
                             className='form-control'
                         />
                     </div>
+                    <div className='form-group'>
+                        <input type='submit'
+                            value='Create User'
+                            className='btn btn-primary'
+                            />
+                    </div>
                 </form>
             </div>
         )
