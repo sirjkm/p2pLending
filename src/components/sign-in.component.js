@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class SignIn extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
 
     onSubmit(e) {
         e.preventDefault();
