@@ -17,17 +17,17 @@ export default class SignIn extends React.Component {
     render() {
         return (
             <div>
-                <h3>sign in</h3>
+                <h3>Sign In</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
-                        <label>username: </label>
+                        <label>Username: </label>
                         <input type='text'
                             required
                             className='form-control'
                         />
                     </div>
                     <div className='form-group'>
-                        <label>password: </label>
+                        <label>Password: </label>
                         <input type='text'
                             required
                             className='form-control'
